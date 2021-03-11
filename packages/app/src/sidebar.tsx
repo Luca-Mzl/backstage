@@ -66,6 +66,7 @@ export const AppSidebar = () => (
     <SidebarItem icon={CreateComponentIcon} to="create" text="Create..." />
     <SidebarDivider />
     <SidebarItem icon={MapIcon} to="tech-radar" text="Tech Radar" />
+    <SidebarItem icon={LibraryBooks} to="/testplugin" text="Test plugin" />
     {/* End global nav */}
     <SidebarDivider />
     <SidebarSpace />
