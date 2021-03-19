@@ -24,7 +24,7 @@ integrations:
   github:
     - host: github.com
       token:
-        $env: GITHUB_TOKEN
+        $env: f88a0e86050a6e3061a9a6ba27f7f4f499efb079
     ### Example for how to add your GitHub Enterprise instance using the API:
     # - host: ghe.example.net
     #   apiBaseUrl: https://ghe.example.net/api/v3
@@ -47,14 +47,20 @@ techdocs:
   publisher:
     type: 'local' # Alternatives - 'googleGcs' or 'awsS3'. Read documentation for using alternatives.
 
+# see https://backstage.io/docs/tutorials/quickstart-app-auth to know more about enabling auth providers
 auth:
-  # see https://backstage.io/docs/tutorials/quickstart-app-auth to know more about enabling auth providers
-  providers: {}
+  providers:
+    github:
+      development:
+        clientId: 9200f6b83e91116512e6
+          #$env: 
+        clientSecret: 942d384e9611ac7c26819516035cf83e58536ca3
+          #$env: 
 
 scaffolder:
   github:
     token:
-      $env: GITHUB_TOKEN
+      $env: f88a0e86050a6e3061a9a6ba27f7f4f499efb079
     visibility: public # or 'internal' or 'private'
 
 catalog:

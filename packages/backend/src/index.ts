@@ -67,7 +67,8 @@ async function main() {
   const service = createServiceBuilder(module)
     .loadConfig(config)
     .addRouter('/api', apiRouter)
-    .addRouter('', await app(appEnv));
+    .addRouter('', await app(appEnv))
+    .addRouter('/proxy', await proxy(proxyEnv));
 
   await service.start().catch(err => {
     console.log(err);
