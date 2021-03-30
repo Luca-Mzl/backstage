@@ -35,6 +35,7 @@ import {
   isPluginApplicableToEntity as isGitHubActionsAvailable, Router as GitHubActionsRouter
 } from '@backstage/plugin-github-actions';
 import { EmbeddedDocsRouter as DocsRouter } from '@backstage/plugin-techdocs';
+import { TestpluginPage as MyPluginRouter } from '@internal/plugin-testplugin';
 import { Grid } from '@material-ui/core';
 import React from 'react';
 
@@ -98,6 +99,11 @@ const ServiceEntityPage = ({ entity }: { entity: Entity }) => (
       title="Docs"
       element={<DocsRouter entity={entity} />}
     />
+    <EntityPageLayout.Content
+      path="/testplugin/*"
+      title="My custom plugin"
+      element={<MyPluginRouter /* entity={entity} */ />}
+    />
   </EntityPageLayout>
 );
 
@@ -118,6 +124,11 @@ const WebsiteEntityPage = ({ entity }: { entity: Entity }) => (
       title="Docs"
       element={<DocsRouter entity={entity} />}
     />
+    <EntityPageLayout.Content
+      path="/testplugin/*"
+      title="My custom plugin"
+      element={<MyPluginRouter /* entity={entity} */ />}
+    />
   </EntityPageLayout>
 );
 
@@ -132,6 +143,11 @@ const DefaultEntityPage = ({ entity }: { entity: Entity }) => (
       path="/docs/*"
       title="Docs"
       element={<DocsRouter entity={entity} />}
+    />
+    <EntityPageLayout.Content
+      path="/testplugin/*"
+      title="My custom plugin"
+      element={<MyPluginRouter /* entity={entity} */ />}
     />
   </EntityPageLayout>
 );

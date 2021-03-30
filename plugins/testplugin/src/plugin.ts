@@ -12,7 +12,7 @@ export const testpluginPlugin = createPlugin({
 export const TestpluginPage = testpluginPlugin.provide(
   createRoutableExtension({
     component: () =>
-      import('./components/ExampleComponent').then(m => m.ExampleComponent),
+      import('./components/MyPage').then(m => m.MyPage),
     mountPoint: rootRouteRef,
   }),
 );
