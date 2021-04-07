@@ -1,6 +1,19 @@
 app:
   title: Scaffolded Backstage App
   baseUrl: http://localhost:3000
+  support:
+    url: https://github.com/backstage/backstage/issues # Used by common ErrorPage
+    items: # Used by common SupportButton component
+      - title: Issues
+        icon: github
+        links:
+          - url: https://github.com/backstage/backstage/issues
+            title: GitHub Issues
+      - title: Discord Chatroom
+        icon: chat
+        links:
+          - url: https://discord.gg/MUpMjP2
+            title: '#backstage'
 
 organization:
   name: My Company
@@ -23,8 +36,8 @@ backend:
 integrations:
   github:
     - host: github.com
-      token: 
-        $env: f88a0e86050a6e3061a9a6ba27f7f4f499efb079
+      token: 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
+        #$env: 
     ### Example for how to add your GitHub Enterprise instance using the API:
     # - host: ghe.example.net
     #   apiBaseUrl: https://ghe.example.net/api/v3
@@ -59,8 +72,8 @@ auth:
 
 scaffolder:
   github:
-    token:
-      $env: f88a0e86050a6e3061a9a6ba27f7f4f499efb079
+    token: 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
+      #$env: 
     visibility: public # or 'internal' or 'private'
 
 catalog:
