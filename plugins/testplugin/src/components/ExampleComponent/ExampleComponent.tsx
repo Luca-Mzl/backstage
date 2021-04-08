@@ -11,9 +11,20 @@ import {
 } from '@backstage/core';
 import { ExampleFetchComponent } from '../ExampleFetchComponent';
 
-export const ExampleComponent = () => (
+type ExampleProps = {
+  name: string,
+  description: string,
+  spec: {
+    type: string,
+    lifecycle: string,
+    owner: string,
+    system: string
+  }
+};
+
+export const ExampleComponent = (_props: ExampleProps) => (
   <Page themeId="tool">
-    <Header title="Welcome to testplugin!" subtitle="Optional subtitle">
+    <Header title="Welcome to testplugin!" subtitle={`Current ${_props.spec.type}: ${_props.name}`}>
       <HeaderLabel label="Owner" value="Team X" />
       <HeaderLabel label="Lifecycle" value="Alpha" />
     </Header>
@@ -23,9 +34,16 @@ export const ExampleComponent = () => (
       </ContentHeader>
       <Grid container spacing={3} direction="column">
         <Grid item>
-          <InfoCard title="Information card">
+          <InfoCard title="Service description">
             <Typography variant="body1">
-              All content should be wrapped in a card like this.
+              {_props.description}
+            </Typography>
+          </InfoCard>
+        </Grid>
+        <Grid item>
+          <InfoCard title="Service spec">
+            <Typography variant="body1">
+              {JSON.stringify(_props.spec)}
             </Typography>
           </InfoCard>
         </Grid>
