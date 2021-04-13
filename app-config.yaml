@@ -36,8 +36,8 @@ backend:
 integrations:
   github:
     - host: github.com
-      token:
-        $env: GITHUB_TOKEN
+      apps:
+        - $include: github-app-backstage-lucamzl-credentials.yaml
     ### Example for how to add your GitHub Enterprise instance using the API:
     # - host: ghe.example.net
     #   apiBaseUrl: https://ghe.example.net/api/v3
@@ -72,8 +72,8 @@ auth:
 
 scaffolder:
   github:
-    token:
-      $env: GITHUB_TOKEN
+    #token:
+    #  $env: GITHUB_TOKEN
     visibility: public # or 'internal' or 'private'
 
 catalog:
