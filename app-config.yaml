@@ -76,6 +76,8 @@ scaffolder:
     #  $env: GITHUB_TOKEN
     visibility: public # or 'internal' or 'private'
 
+#test
+
 catalog:
   rules:
     - allow: [Component, API, Group, User, Template, Location]
